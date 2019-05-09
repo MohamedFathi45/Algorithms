@@ -1,0 +1,22 @@
+int bartation( int s , int e ,int arr[] )
+{
+    int paviot = arr[e];
+    int pindex = s ;
+    for( int i = s ; i <= e-1 ; i ++ )
+    {
+        if( arr[i] <= paviot )
+            swap(arr[i] , arr[pindex] ) , pindex ++;
+
+    }
+    swap( arr[e] , arr[pindex] );
+    return pindex;
+}
+
+void QuickSort( int arr[] , int s , int e )
+{
+    if( s < e ){
+        int p = bartation( s , e  , arr );
+        quick_sort( arr , s , p - 1 );
+        quick_sort( arr , p+1 , e );
+    }
+}
